@@ -10,7 +10,14 @@ import { context } from "./context";
 const apolloServer = new ApolloServer({
   typeDefs: schema,
   resolvers,
-  context: context,
+  // context: context,
+  context: ({ req }) => {
+    return {
+      headers: {
+        token: req.headers.token
+      }
+    }
+  },
   playground: {
     endpoint: "/graphql"
   },

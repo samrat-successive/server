@@ -6,7 +6,7 @@ import { gql } from "apollo-server";
 
 export const BookSchema = gql`
   type Book {
-    id: ID!,
+    _id: ID!,
     name: String!,
     description: String!,
     author: String!,
